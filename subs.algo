@@ -1,0 +1,50 @@
+PROCEDURE addition(VAR size: INTEGER)
+VAR
+    nums: ARRAY_OF INTEGER[size];
+    i: INTEGER;
+    sum: INTEGER := 0;
+BEGIN
+    // size = 50
+    FOR i FROM 0 TO nums.length-1 STEP 1  DO
+        Read(nums[i])
+    END_FOR
+
+    FOR i FROM 0 TO nums.length-1 STEP 1  DO
+        sum := sum + nums[i]
+    END_FOR
+
+    Write("Sum is " + sum);
+END
+
+FUNCTION productOf2(VAR num1: INTEGER, VAR num2: INTEGER): INTEGER
+VAR
+    result: INTEGER;
+BEGIN
+    result = num1 * num2;
+    return result;
+END
+
+ALGORITHM test
+VAR
+    size: INTEGER;
+BEGIN
+    Write("How many numbers do you want to add?")
+    Read(size);
+
+    addition(size)
+    addition(3)
+    addition(10)
+
+    Write(size)
+END
+
+ALGORITHM test_2
+VAR
+    result: INTEGER;
+    num1: INTEGER := 4; 
+    num2: INTEGER := 5;
+BEGIN
+    // res = 40 
+    result = productOf2(num1, num2)
+    Write(result)
+END

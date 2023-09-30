@@ -1,0 +1,39 @@
+FUNCTION linear_search(tab : ARRAY_OF INTEGER, val : INTEGER) : BOOLEAN
+VAR
+    i : INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        IF (tab[i] = val) THEN
+            RETURN TRUE
+        END_IF
+    END_FOR
+    RETURN FALSE
+END
+
+
+FUNCTION binary_search(arr : ARRAY_OF INTEGER) : INTEGER
+VAR
+    left, right, mid : INTEGER;
+BEGIN
+    left := 0;
+    right := arr.length-1;
+    WHILE (left < right) DO
+        mid := left + (right - left)/2;
+
+        // check if x is present in the mid
+        IF (arr[mid] = x) THEN
+            RETURN mid;
+        END_IF
+
+        // if x is lesser, ignore the right half
+        IF (x < arr[mid]) THEN
+            right := mid-1;
+        ELSE
+            // if x is greater, ignore the left half
+            left := mid+1;
+        END_IF
+    END_WHILE
+    
+    // if we reached here then the element is not present
+    RETURN -1  ;
+END

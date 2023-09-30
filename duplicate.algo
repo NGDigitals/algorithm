@@ -1,0 +1,16 @@
+FUNCTION contain_dup(tab : ARRAY_OF INTEGER) : BOOLEAN
+VAR
+    i,j : INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO //O(n)
+        FOR j FROM i + 1 TO tab.length-1 STEP 1  DO //O(n-i)
+            IF (i<>j AND tab[i] = tab[j]) THEN // O(1)
+                RETURN TRUE
+            END_IF
+        END_FOR
+    END_FOR
+    RETURN FALSE ;
+END
+
+//O(n) + O(n-i) = O(n log n)
+//O(10) + O(9) + O(8) .... O(0)

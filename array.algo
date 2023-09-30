@@ -1,0 +1,75 @@
+ALGORITHM traverse_array
+VAR
+    tab : ARRAY_OF INTEGER[100]; // declaring the array and define its length.
+    i : INTEGER; // declaring the index for each element in the array.
+BEGIN
+    tab := {1,2,3,5,7}; // inserting the elements directly in the array.
+    Write('Print Array :')
+    // Write(tab[0]);
+    // Write(tab[1]);
+    // Write(tab[2]);
+
+    //Untrusted version 
+    FOR i FROM 0 TO 4 STEP 1 DO   // the index of arrays start from 0;
+        Write(tab[i]) // to access the element, we use the name_array[indexation]
+    END_FOR
+
+    // Trusted version
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        Write(tab[i])
+    END_FOR
+END
+
+
+ALGORITHM insertion_array
+VAR
+    tab : ARRAY_OF INTEGER[3];
+    i, j, pos, elt : INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP 1 DO
+        Read(tab[i]);// insert from user {5, 2, 3}
+        //tab[1] = 9 
+    END_FOR
+
+    // tab[2] = 16
+END
+
+ALGORITHM search_array
+VAR
+    tab : ARRAY_OF INTEGER[5] := {3, 5, 2, 9, 1};
+    i, item : INTEGER;
+BEGIN
+    Write("give the element to search of");
+    Read(item);
+
+    i := 0;
+    WHILE (i < tab.length) DO
+        IF (tab[i] = item) THEN
+            BREAK; // element is found let break the loop
+        END_IF
+        i := i+1; // update index
+    END_WHILE
+
+    IF (i = tab.length) THEN  // we reached the end of array without finding the element
+        Write("Element not found");
+    ELSE
+        Write("The position of the element is ", i);
+    END_IF
+END
+
+ALGORITHM deletion_array
+VAR
+    tab : ARRAY_OF INTEGER[5] := {3, 5, 4, 9, 1};
+    i, pos : INTEGER;
+BEGIN
+    Write("give the position to delete");
+    Read(pos);
+
+    i := pos;
+    WHILE (i < tab.length-1) DO
+        tab[i] := tab[i+1]; // translation from right to left
+        i := i+1; // update index
+    END_WHILE
+
+    // remember the tab.length is decreased by 1.
+END

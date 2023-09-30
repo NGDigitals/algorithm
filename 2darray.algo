@@ -1,0 +1,20 @@
+ALGORITHM test
+VAR
+    row: INTEGER := 3;
+    col: INTEGER := 5;
+    matrix : ARRAY_OF INTEGER[row][col];
+    i, j : INTEGER;
+    value : INTEGER;
+
+    name : STRING[10] := "Nathan";
+    str : STRING := "GoMyCode";
+    str : STRING[] := {"G",'o','M','y','C','o','d','e'};
+
+BEGIN
+    FOR i FROM 0 TO row-1 STEP 1 DO // Row loop
+        FOR j FROM 0 TO col-1 STEP 1 DO //Column loop
+            matrix[i][j] := 0;
+            value = matrix[i][j];
+        END_FOR
+    END_FOR
+END

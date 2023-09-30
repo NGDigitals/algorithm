@@ -1,0 +1,37 @@
+ALGORITHM add_three_nums
+VAR
+    num1 : INTEGER;
+    num2, num3, num4 : INTEGER;
+    sum : INTEGER := 0;
+CONST
+    name : STRING := "Salem"
+BEGIN
+    Read(num1)
+    Read(num2)
+    Read(num3)
+
+    sum = num1 + num2 + num3
+
+    Write(sum)
+END
+
+ALGORITHM types
+VAR
+    i : INTEGER := 26;
+    f : FLOAT := 4.56;
+    c : CHAR := 'c';
+    s : STRING := 'str';
+    b : BOOLEAN := TRUE;
+BEGIN
+    // this is a single line comment
+    /* this is
+    a multi line comment 
+    */
+    f := i; // correct
+    i := f; // wrong
+    
+    // we cannot mix types
+    f := c; // wrong
+    s := c; // correct
+    b := i; // wrong
+END
